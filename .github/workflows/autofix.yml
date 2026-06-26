@@ -1,4 +1,4 @@
-name: AI Autofix Loop
+name: AI Autofix Loop V2
 
 on:
   workflow_run:
@@ -20,16 +20,29 @@ jobs:
         with:
           node-version: 20
 
+      - name: Get commit message
+        run: echo "COMMIT_MSG=$(git log -1 --pretty=%B)" >> $GITHUB_ENV
+
+      - name: Check attempt limit
+        run: |
+          echo "$COMMIT_MSG" | grep -q "AI autofix attempt 3" && echo "STOP=1" >> $GITHUB_ENV || echo "STOP=0" >> $GITHUB_ENV
+
+      - name: Stop if max attempts reached
+        if: env.STOP == '1'
+        run: echo "Max autofix reached, exiting..."
+
       - name: Run Autofix
+        if: env.STOP != '1'
         env:
           OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
           AI_AUTOFIX_MODEL: gpt-4.1-mini
         run: node scripts/autofix.js
 
       - name: Commit changes
+        if: env.STOP != '1'
         run: |
           git config user.name "autofix-bot"
           git config user.email "autofix@bot.com"
           git add .
-          git commit -m "auto fix by AI" || echo "no changes"
+          git commit -m "AI autofix attempt ${GITHUB_RUN_NUMBER}: auto fix v2" || echo "no changes"
           git push
