@@ -1,0 +1,10 @@
+{
+  "name": "healthy-diet-miniapp",
+  "version": "1.0.0",
+  "private": true,
+  "description": "原生微信小程序健康饮食助手示例项目",
+  "scripts": {
+    "check": "node scripts/validate.js"
+  },
+  "devDependencies": {}
+}

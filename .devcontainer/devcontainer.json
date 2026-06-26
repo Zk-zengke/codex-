@@ -1,0 +1,12 @@
+{
+  "name": "WeChat Mini Program Check Environment",
+  "image": "mcr.microsoft.com/devcontainers/javascript-node:20",
+  "customizations": {
+    "vscode": {
+      "extensions": [
+        "dbaeumer.vscode-eslint"
+      ]
+    }
+  },
+  "postCreateCommand": "npm run check"
+}
