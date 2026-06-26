@@ -1,0 +1,34 @@
+<view class="container shopping-page">
+  <view class="card">
+    <view class="title">购物清单</view>
+    <view class="text-muted">可以手动添加食材，也可以从“食材”页面加入。</view>
+
+    <view class="input-row">
+      <input class="input" placeholder="请输入食材名称" value="{{inputValue}}" bindinput="handleInput" confirm-type="done" bindconfirm="addItem" />
+      <button class="small-button" bindtap="addItem">添加</button>
+    </view>
+  </view>
+
+  <view wx:if="{{list.length === 0}}" class="card empty-card">
+    <view class="subtitle">暂无食材</view>
+    <view class="text-muted">去“食材”页面选择常见食材，或者在上方手动添加。</view>
+  </view>
+
+  <view wx:else class="card">
+    <view class="list-header">
+      <view class="subtitle">待购买 {{activeCount}} 项</view>
+      <button class="clear-button" size="mini" bindtap="clearChecked">清除已完成</button>
+    </view>
+
+    <view wx:for="{{list}}" wx:key="id" class="shopping-item">
+      <view class="item-main" data-id="{{item.id}}" bindtap="toggleItem">
+        <view class="checkbox {{item.checked ? 'checked' : ''}}">{{item.checked ? '✓' : ''}}</view>
+        <view class="item-text {{item.checked ? 'done' : ''}}">
+          <view>{{item.name}}</view>
+          <view class="item-time">{{item.createdAt}}</view>
+        </view>
+      </view>
+      <button class="delete-button" size="mini" data-id="{{item.id}}" bindtap="deleteItem">删除</button>
+    </view>
+  </view>
+</view>

@@ -1,0 +1,23 @@
+<view class="container mine-page">
+  <view class="card profile-card">
+    <view class="avatar">食</view>
+    <view>
+      <view class="title">健康饮食助手</view>
+      <view class="text-muted">原生微信小程序示例项目</view>
+    </view>
+  </view>
+
+  <view class="card">
+    <view class="subtitle">本地数据</view>
+    <view class="info-row">
+      <text>购物清单数量</text>
+      <text>{{shoppingCount}} 项</text>
+    </view>
+    <button class="secondary-button" bindtap="clearAllData">清空本地数据</button>
+  </view>
+
+  <view class="card">
+    <view class="subtitle">项目说明</view>
+    <view class="text-muted">这个小程序包含首页、食材营养、购物清单和我的四个页面，适合作为微信小程序课程作业基础版本继续扩展。</view>
+  </view>
+</view>
