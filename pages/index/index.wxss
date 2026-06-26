@@ -2,6 +2,23 @@
   background: linear-gradient(135deg, #e9f7ea, #ffffff);
 }
 
+.photo-card {
+  overflow: hidden;
+}
+
+.xiaoke-photo {
+  width: 100%;
+  height: 680rpx;
+  display: block;
+  border-radius: 20rpx;
+  background: #eef2ee;
+}
+
+.photo-tip {
+  margin-top: 14rpx;
+  font-size: 24rpx;
+}
+
 .meal-item {
   display: flex;
   flex-direction: column;

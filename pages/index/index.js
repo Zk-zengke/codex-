@@ -1,5 +1,6 @@
 Page({
   data: {
+    photoUrl: 'https://raw.githubusercontent.com/Zk-zengke/xiaoke/406ce4e79c6051ad8579c3624f9006ff94fe96a1/uploads/photos/121_%E5%B0%8F%E5%8F%AF_%E6%B5%B7%E8%BE%B9%E6%B3%B3%E8%A3%85%E5%9B%9E%E5%A4%B4%E7%85%A7.png',
     dailyMeals: [
       {
         name: '早餐',
