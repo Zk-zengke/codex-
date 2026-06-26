@@ -23,13 +23,18 @@ page {
 }
 
 .container {
+  width: 100%;
+  max-width: 760px;
   min-height: 100vh;
   box-sizing: border-box;
-  padding: 32rpx;
+  margin: 0 auto;
+  padding: 32rpx 32rpx calc(130rpx + env(safe-area-inset-bottom));
   background: #f6f8f5;
 }
 
 .card {
+  width: 100%;
+  box-sizing: border-box;
   margin-top: 24rpx;
   padding: 28rpx;
   border-radius: 24rpx;
@@ -38,30 +43,34 @@ page {
 }
 
 .title {
-  font-size: 42rpx;
+  font-size: clamp(32rpx, 5.2vw, 46rpx);
   font-weight: 700;
   color: #2f7d32;
+  line-height: 1.3;
 }
 
 .subtitle {
   margin-bottom: 18rpx;
-  font-size: 32rpx;
+  font-size: clamp(28rpx, 4.4vw, 36rpx);
   font-weight: 700;
   color: #2f7d32;
+  line-height: 1.35;
 }
 
 .text-muted {
   color: #78909c;
-  font-size: 26rpx;
+  font-size: clamp(24rpx, 3.7vw, 30rpx);
   line-height: 1.7;
 }
 
 .primary-button,
 .secondary-button,
 .danger-button {
-  margin: 22rpx 0 0;
+  width: 100%;
+  max-width: 640px;
+  margin: 22rpx auto 0;
   border-radius: 999rpx;
-  font-size: 28rpx;
+  font-size: clamp(26rpx, 4vw, 32rpx);
 }
 
 .primary-button {
@@ -84,5 +93,18 @@ page {
   text-align: center;
   color: #90a4ae;
   font-size: 28rpx;
+}
+
+@media screen and (min-width: 900px) {
+  .container {
+    max-width: 720px;
+    padding-left: 24px;
+    padding-right: 24px;
+  }
+
+  .card {
+    padding: 28px;
+    border-radius: 24px;
+  }
 }
 </style>

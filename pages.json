@@ -36,22 +36,34 @@
     "selectedColor": "#2f7d32",
     "backgroundColor": "#ffffff",
     "borderStyle": "black",
+    "height": "58px",
+    "fontSize": "12px",
+    "iconWidth": "24px",
+    "spacing": "4px",
     "list": [
       {
         "pagePath": "pages/index/index",
-        "text": "首页"
+        "text": "首页",
+        "iconPath": "static/tabbar/home.svg",
+        "selectedIconPath": "static/tabbar/home-active.svg"
       },
       {
         "pagePath": "pages/foods/foods",
-        "text": "食材"
+        "text": "食材",
+        "iconPath": "static/tabbar/foods.svg",
+        "selectedIconPath": "static/tabbar/foods-active.svg"
       },
       {
         "pagePath": "pages/shopping/shopping",
-        "text": "清单"
+        "text": "清单",
+        "iconPath": "static/tabbar/shopping.svg",
+        "selectedIconPath": "static/tabbar/shopping-active.svg"
       },
       {
         "pagePath": "pages/mine/mine",
-        "text": "我的"
+        "text": "我的",
+        "iconPath": "static/tabbar/mine.svg",
+        "selectedIconPath": "static/tabbar/mine-active.svg"
       }
     ]
   }
