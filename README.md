@@ -9,12 +9,29 @@
 - 购物清单：支持添加、完成、删除、清除已完成
 - 我的页：查看本地数据统计，并支持清空数据
 
-## 运行到浏览器 H5
+## Codespaces 运行方法
 
-在 Codespaces 或本地 VS Code 终端执行：
+先拉取最新代码：
+
+```bash
+git pull
+```
+
+如果之前安装失败，先清理一次：
+
+```bash
+rm -rf node_modules package-lock.json
+```
+
+安装依赖：
 
 ```bash
 npm install
+```
+
+运行 H5：
+
+```bash
 npm run dev:h5
 ```
 
@@ -23,7 +40,6 @@ npm run dev:h5
 ## 编译成微信小程序
 
 ```bash
-npm install
 npm run dev:mp-weixin
 ```
 
@@ -34,6 +50,20 @@ dist/dev/mp-weixin
 ```
 
 注意：微信小程序模拟器必须用本地电脑上的微信开发者工具，Codespaces 里不能直接打开微信模拟器。
+
+## 如果 npm install 出现 ERESOLVE
+
+仓库已经加入 `.npmrc`：
+
+```text
+legacy-peer-deps=true
+```
+
+所以正常执行 `git pull` 后再 `npm install` 即可。如果还是报错，手动执行：
+
+```bash
+npm install --legacy-peer-deps
+```
 
 ## 主要 uni-app 文件
 
