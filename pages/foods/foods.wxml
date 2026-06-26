@@ -1,0 +1,20 @@
+<view class="container foods-page">
+  <view class="card">
+    <view class="title">常见食材</view>
+    <view class="text-muted">点击“加入清单”可以把食材保存到本地购物清单。</view>
+  </view>
+
+  <view wx:for="{{foods}}" wx:key="id" class="food-card card">
+    <view class="food-header">
+      <view>
+        <view class="food-name">{{item.name}}</view>
+        <view class="food-tag">{{item.category}}</view>
+      </view>
+      <button class="add-button" size="mini" data-name="{{item.name}}" bindtap="addToShopping">加入清单</button>
+    </view>
+    <view class="text-muted food-desc">{{item.desc}}</view>
+    <view class="nutrition-list">
+      <text wx:for="{{item.nutrition}}" wx:key="*this" class="nutrition-item">{{item}}</text>
+    </view>
+  </view>
+</view>

@@ -1,0 +1,26 @@
+.hero {
+  background: linear-gradient(135deg, #e9f7ea, #ffffff);
+}
+
+.meal-item {
+  display: flex;
+  flex-direction: column;
+  padding: 18rpx 0;
+  border-bottom: 1rpx solid #eef2ee;
+}
+
+.meal-item:last-child {
+  border-bottom: 0;
+}
+
+.meal-name {
+  font-size: 30rpx;
+  font-weight: 600;
+  margin-bottom: 8rpx;
+}
+
+.tip-item {
+  color: #415244;
+  line-height: 1.8;
+  margin: 8rpx 0;
+}

@@ -1,0 +1,21 @@
+<view class="container index-page">
+  <view class="hero card">
+    <view class="title">健康饮食助手</view>
+    <view class="text-muted">帮你快速查看食材营养、记录购物清单，适合作为微信小程序课程项目基础版本。</view>
+    <button class="primary-button" bindtap="goFoods">查看食材营养</button>
+  </view>
+
+  <view class="card">
+    <view class="subtitle">今日饮食建议</view>
+    <view wx:for="{{dailyMeals}}" wx:key="name" class="meal-item">
+      <text class="meal-name">{{item.name}}</text>
+      <text class="text-muted">{{item.desc}}</text>
+    </view>
+  </view>
+
+  <view class="card">
+    <view class="subtitle">小提醒</view>
+    <view wx:for="{{tips}}" wx:key="*this" class="tip-item">• {{item}}</view>
+    <button class="secondary-button" bindtap="goShopping">打开购物清单</button>
+  </view>
+</view>
