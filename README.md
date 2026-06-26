@@ -17,13 +17,13 @@
 git pull
 ```
 
-如果之前安装失败，先清理一次：
+如果之前安装失败或运行失败，先清理旧依赖：
 
 ```bash
 rm -rf node_modules package-lock.json
 ```
 
-安装依赖：
+重新安装依赖：
 
 ```bash
 npm install
@@ -35,7 +35,7 @@ npm install
 npm run dev:h5
 ```
 
-运行成功后，打开终端输出的地址。如果是在 Codespaces，看到端口提示后点击 Open in Browser。
+运行成功后，终端会输出类似 `http://localhost:5173/` 的地址。如果是在 Codespaces，看到端口提示后点击 Open in Browser。
 
 ## 编译成微信小程序
 
@@ -43,27 +43,13 @@ npm run dev:h5
 npm run dev:mp-weixin
 ```
 
-编译完成后，用微信开发者工具打开：
+编译完成后，用本地电脑的微信开发者工具打开：
 
 ```text
 dist/dev/mp-weixin
 ```
 
 注意：微信小程序模拟器必须用本地电脑上的微信开发者工具，Codespaces 里不能直接打开微信模拟器。
-
-## 如果 npm install 出现 ERESOLVE
-
-仓库已经加入 `.npmrc`：
-
-```text
-legacy-peer-deps=true
-```
-
-所以正常执行 `git pull` 后再 `npm install` 即可。如果还是报错，手动执行：
-
-```bash
-npm install --legacy-peer-deps
-```
 
 ## 主要 uni-app 文件
 
